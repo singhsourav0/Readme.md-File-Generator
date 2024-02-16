@@ -61,7 +61,7 @@ if github_repo_url:
             st.write(readme_text)
 
             # Offer option to download the text as a file
-            download_text_as_file(readme_text, "readme.md")
+            download_text_as_file(readme_text, "README.md")
         
 
 
