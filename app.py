@@ -7,7 +7,9 @@ import pathlib
 
 #genai code
 import google.generativeai as genai
-key = st.secrets.db.pass
+
+#key = st.secrets.db.pass
+st.write("key", st.secrets["key"])
 genai.configure(api_key=key)
 model = genai.GenerativeModel('gemini-pro')
 
