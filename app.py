@@ -7,8 +7,8 @@ import pathlib
 
 #genai code
 import google.generativeai as genai
-GOOGLE_API_KEY= 'AIzaSyCO_oGhqCy19NAsmhYlQXMBB4t_oWsAl3k'
-genai.configure(api_key=GOOGLE_API_KEY)
+
+genai.configure(api_key=key)
 model = genai.GenerativeModel('gemini-pro')
 
 def is_github_url(url):
