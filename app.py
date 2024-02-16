@@ -9,8 +9,8 @@ import pathlib
 import google.generativeai as genai
 
 #key = st.secrets.db.pass
-st.write("key= ", st.secrets["key"])
-genai.configure(api_key=key)
+st.write("key = ", st.secrets["key"])
+genai.configure(api_key = key)
 model = genai.GenerativeModel('gemini-pro')
 
 def is_github_url(url):
