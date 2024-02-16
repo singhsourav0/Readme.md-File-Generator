@@ -1,2 +1,3 @@
 clipboard
 google.generativeai
+pathlib
