@@ -1,7 +1,7 @@
 import streamlit as st
 import re
 import time
-import clipboard
+import io
 from io import BytesIO
 import pathlib
 
