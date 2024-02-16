@@ -1,3 +1,6 @@
-clipboard
+streamlit
+re
+BytesIO
+clipboard==0.0.4
 google.generativeai
 pathlib
