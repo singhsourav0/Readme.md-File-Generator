@@ -38,25 +38,30 @@ st.write("# 🌈README.MD FILE GENERATOR")
 st.write(":dog: Upload your GitHub URL to watch it magically generate a Readme.md file for you.")
 st.sidebar.write("## 🌈Upload and copy :gear:")
 
-# User input for GitHub repository URL
+def download_text_as_file(text, filename):
+    """
+    Function to download text as a file
+    """
+    text_bytes = text.encode('utf-8')
+    with io.BytesIO(text_bytes) as f:
+        st.download_button(label="Download Text", data=f, file_name=filename, mime="text/plain")
+
 github_repo_url = st.text_input("Enter GitHub Repository URL:")
 
-# Check if a GitHub repository URL is provided
 if github_repo_url:
     # Validate the GitHub repository URL
     if not is_github_url(github_repo_url):
         st.error("Invalid GitHub Repository URL. Please enter a valid URL in the format https://github.com/username/repository.")
     else:
-        # If the URL is valid and the user presses the copy button, generate README
+        # If the URL is valid and the user presses the Generate README button
         if st.button("Generate README"):
             st.success("Generating README...")        
-            container = st.container(border=True)
-            container.write("### readme.md")
             readme_text = generate_readme(github_repo_url)
-            container.write(readme_text)
-            container.button("Copy", key="copy")
-            clipboard.copy(readme_text)
+            st.write("### Readme.md")
+            st.write(readme_text)
 
+            # Offer option to download the text as a file
+            download_text_as_file(readme_text, "readme.md")
         
 
 
